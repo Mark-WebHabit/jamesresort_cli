@@ -5,23 +5,19 @@ import ShowReceipt from "./ShowReceipt";
 
 function GetGuestInfo({
   name,
-  email,
   address,
   contact,
   setName,
-  setEmail,
   setAddress,
   setContact,
   setShowGuestInfio,
   handleConfirm,
   reservationId,
+  reference,
+  setReference,
 }) {
   const [finalConfirmation, setFinalConfirmation] = useState(false);
   const [showReceipt, setShowReceipt] = useState(false);
-  const isValidEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   const isValidContact = (contact) => {
     const contactRegex = /^(\+63|0)9\d{9}$/;
@@ -29,9 +25,7 @@ function GetGuestInfo({
   };
 
   const handleNext = () => {
-    if (name && isValidEmail(email) && isValidContact(contact) && address) {
-      setFinalConfirmation(true);
-
+    if (name && reference && isValidContact(contact) && address) {
       setFinalConfirmation(true);
     } else {
       alert("Please ensure all fields are valid.");
@@ -68,14 +62,14 @@ function GetGuestInfo({
                 />
               </div>
               <div className="mt-4">
-                <label className="pl-4">Email</label>
+                <label className="pl-4">DP Reference#</label>
                 <input
-                  type="email"
+                  type="text"
                   className="w-full py-2 pl-4 border border-black rounded-full"
                   maxLength={100}
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={reference}
+                  onChange={(e) => setReference(e.target.value)}
                 />
               </div>
               <div className="mt-4">
@@ -137,17 +131,17 @@ function GetGuestInfo({
 
 GetGuestInfo.propTypes = {
   name: PropTypes.string,
-  email: PropTypes.string,
   address: PropTypes.string,
   contact: PropTypes.string,
   setName: PropTypes.func,
-  setEmail: PropTypes.func,
   setAddress: PropTypes.func,
   setContact: PropTypes.func,
   setShowGuestInfio: PropTypes.func,
   setShhowFinalConfirmation: PropTypes.func,
   handleConfirm: PropTypes.func,
   reservationId: PropTypes.string,
+  reference: PropTypes.string,
+  setReference: PropTypes.func,
 };
 
 export default GetGuestInfo;

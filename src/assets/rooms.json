@@ -1,7 +1,7 @@
 [
   {
     "name": "A-room 1",
-    "images": [0],
+    "images": [1, 2, 3, 4],
     "pax": 8,
     "price": 2500,
     "inclutions": [
@@ -15,7 +15,7 @@
   },
   {
     "name": "A-room 2",
-    "images": [0],
+    "images": [5, 6, 7, 8, 9, 10],
     "pax": 8,
     "price": 2500,
     "inclutions": [
@@ -29,7 +29,7 @@
   },
   {
     "name": "Villa 1",
-    "images": [0],
+    "images": [34, 35, 36, 37, 38, 39, 40, 41, 42],
     "pax": 15,
     "price": 6000,
     "inclutions": [
@@ -44,7 +44,7 @@
   },
   {
     "name": "Villa 2",
-    "images": [0],
+    "images": [43, 44, 45, 46, 47, 48, 49],
     "pax": 15,
     "price": 6000,
     "inclutions": [
@@ -59,7 +59,7 @@
   },
   {
     "name": "Family Room 1",
-    "images": [0],
+    "images": [20, 21, 22],
     "pax": 7,
     "price": 2500,
     "inclutions": ["Own bathroom", "1 twin size bed", "1 bunk bed"],
@@ -68,7 +68,7 @@
   },
   {
     "name": "Family Room 2",
-    "images": [0],
+    "images": [23, 24, 25],
     "pax": 7,
     "price": 2500,
     "inclutions": ["Own bathroom", "1 twin size bed", "1 bunk bed"],
@@ -77,7 +77,7 @@
   },
   {
     "name": "Couple Room 1",
-    "images": [0],
+    "images": [11, 12, 13],
     "pax": 2,
     "price": 1500,
     "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
@@ -86,7 +86,7 @@
   },
   {
     "name": "Couple Room 2",
-    "images": [0],
+    "images": [14, 15, 16],
     "pax": 2,
     "price": 1500,
     "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
@@ -95,7 +95,7 @@
   },
   {
     "name": "Couple Room 3",
-    "images": [0],
+    "images": [17, 18, 19],
     "pax": 2,
     "price": 1500,
     "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
@@ -104,7 +104,7 @@
   },
   {
     "name": "Standard Room 1",
-    "images": [0],
+    "images": [26, 27, 28, 29],
     "pax": 4,
     "price": 1700,
     "inclutions": ["Own bathroom", "1 bunk bed", "Air conditioned"],
@@ -113,7 +113,7 @@
   },
   {
     "name": "Standard Room 2",
-    "images": [0],
+    "images": [30, 31, 32, 33],
     "pax": 4,
     "price": 1700,
     "inclutions": ["Own bathroom", "1 bunk bed", "Air conditioned"],

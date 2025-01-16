@@ -2,20 +2,36 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { RoomsContext } from "../context/RoomsContext";
 import { images } from "../assets/images";
-import { formatDate } from "../utilities/date";
+import { formatDate, convertDateStandard } from "../utilities/date";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ImageSelection from "../components/ImageSelection";
 
 function RoomInfo() {
   const { id } = useParams();
-  const { rooms } = useContext(RoomsContext);
+  const { rooms, reservations } = useContext(RoomsContext);
   const navigate = useNavigate();
   const [room, setRoom] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [bookedDates, setBookedDates] = useState([]);
 
-  const bookedDates = ["2025-01-21", "2025-01-18"]; // Example dates
+  useEffect(() => {
+    if (!reservations || reservations.length <= 0) return;
+    const reserved = reservations.filter((rm) => rm.room == id);
+
+    if (reserved?.length <= 0 || !reserved) return;
+
+    // to cconvert date from January 1, 2025 to 2025-01-01
+    const booked = reserved.map((res) => {
+      const dayDeducted = new Date(res.monthYear);
+      dayDeducted.setDate(dayDeducted.getDate() - 1);
+
+      return convertDateStandard(dayDeducted);
+    });
+
+    setBookedDates(booked);
+  }, [id, selectedDate, reservations]);
 
   const isDateBooked = (date) => {
     return bookedDates.includes(date.toISOString().split("T")[0]);

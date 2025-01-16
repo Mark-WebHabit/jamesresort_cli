@@ -10,7 +10,7 @@ function ImageSelection({ room, setSelectedImage, selectedImage }) {
             src={`..${images[img]}`}
             alt="image"
             key={i}
-            className={`cursor-pointer border-2  ${
+            className={`cursor-pointer border-2 h-[100px] w-full  ${
               selectedImage == img ? "border-red-800" : "border-transparent"
             }`}
             onClick={() => setSelectedImage(img)}

@@ -9,7 +9,7 @@ const RoomCardOption = ({ room }) => {
       <img
         src={`..${images[room.images[0]]}`}
         alt="Image"
-        className="w-full ease-in-out duration-200 hover:scale-110"
+        className="w-full ease-in-out duration-200 h-[400px] object-center hover:scale-110 "
       />
       <button
         className="border px-6 py-4 border-black mt-4 block mx-auto rounded-2xl"

@@ -35,3 +35,19 @@ export function formatTime(date) {
   const strTime = hours + ":" + minutesStr + " " + ampm;
   return strTime;
 }
+
+export function convertDateStandard(dateString) {
+  // Parse the date string into a Date object
+  const date = new Date(dateString);
+
+  if (isNaN(date)) {
+    throw new Error("Invalid date format");
+  }
+
+  // Format the date object to "YYYY-MM-DD"
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}

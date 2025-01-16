@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { RoomsContext } from "../context/RoomsContext";
 import { getTourTimes } from "../utilities/date";
 import { generateRandomDigits } from "../utilities/number";
-import { ref, set } from "firebase/database";
+import { ref, set, push } from "firebase/database";
 import { db } from "../../firebase";
 
 import Summary from "../components/Summary";
@@ -42,7 +42,7 @@ function ReservationSummary() {
 
   // client
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [reference, setReference] = useState("");
   const [address, setAddress] = useState("");
   const [contact, setContact] = useState("");
   const [reservationId, setReservationId] = useState("");
@@ -122,16 +122,31 @@ function ReservationSummary() {
       client: name,
       clientAddress: address,
       clientContact: contact,
-      clientEmail: email,
+      reference,
     };
 
-    // Log the data object to check if everything is correct
-    console.log("Reservation Data:", data);
+    const notif = {
+      description: `New Reservation has been made by ${name}`,
+      reservationDate: fullDate.startingDate.toString(),
+      room: room.name,
+      title: "New Reservation",
+      date: new Date().toISOString(),
+      reservationId: newId,
+      status: "Unread",
+    };
+    const notificationsRef = ref(db, "notifications");
 
     // Store reservation data
     set(ref(db, "reservations/" + newId), data)
       .then(() => {
-        alert("Reservation confirmed!");
+        push(notificationsRef, notif)
+          .then(() => {
+            console.log("Notification added successfully.");
+            // You can add further actions here, e.g., showing a success message
+          })
+          .catch((error) => {
+            console.error("Error adding notification:", error);
+          });
       })
       .catch((error) => {
         console.error("Failed to confirm reservation:", error);
@@ -249,11 +264,11 @@ function ReservationSummary() {
       {showGuestInfo && (
         <GetGuestInfo
           name={name}
-          email={email}
+          reference={reference}
           contact={contact}
           address={address}
           setName={setName}
-          setEmail={setEmail}
+          setReference={setReference}
           setContact={setContact}
           setAddress={setAddress}
           setShowGuestInfio={setShowGuestInfio}

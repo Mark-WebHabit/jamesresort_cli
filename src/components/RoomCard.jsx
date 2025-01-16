@@ -8,7 +8,11 @@ const RoomCard = ({ category, pax, inclutions, price, image, func }) => {
         func();
       }}
     >
-      <img src={`..${images[image]}`} alt="Image" />
+      <img
+        src={`..${images[image]}`}
+        alt="Image"
+        className="h-[300px] w-full"
+      />
       <div className="pl-2">
         <h2 className="font-bold">{category}</h2>
         <p>{pax > 1 ? `1 - ${pax} pax` : "1 pax"}</p>

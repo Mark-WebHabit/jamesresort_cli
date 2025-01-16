@@ -8,6 +8,8 @@ import { RoomsContext } from "./RoomsContext";
 const DataContextProvider = ({ children }) => {
   const [rooms, setRooms] = useState([]);
   const [demoRooms, setDemoRooms] = useState([]);
+  const [reservations, setReservations] = useState([]);
+
   const amenities = {
     beds: 100,
     pillows: 50,
@@ -43,6 +45,26 @@ const DataContextProvider = ({ children }) => {
     return () => off(roomsRef); // Proper cleanup for Firebase listener
   }, []);
 
+  useEffect(() => {
+    const reservationsRef = ref(db, "reservations");
+
+    // Listen for data changes using snapshot and dot notation
+    onValue(reservationsRef, (snapshot) => {
+      const data = snapshot.val();
+      const itemsArray = data
+        ? Object.keys(data).map((key) => ({
+            id: key,
+            ...data[key],
+          }))
+        : [];
+
+      setReservations(itemsArray);
+    });
+
+    // Clean up the listener on unmount
+    return () => off(reservationsRef); // Proper cleanup for Firebase listener
+  }, []);
+
   const getOneRoomPerCategory = useCallback(() => {
     if (rooms.length <= 0) return [];
     const uniqueCateg = [];
@@ -56,6 +78,7 @@ const DataContextProvider = ({ children }) => {
 
     return uniqueCateg;
   }, [rooms]);
+
   useEffect(() => {
     const demoRoomsPerCategory = getOneRoomPerCategory();
     setDemoRooms(demoRoomsPerCategory);
@@ -69,6 +92,7 @@ const DataContextProvider = ({ children }) => {
         amenities: amenities,
         DAYTOUR: DAYTOUR,
         OVERNIGHT: OVERNIGHT,
+        reservations: reservations,
       }}
     >
       {children}
