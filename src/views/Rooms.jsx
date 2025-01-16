@@ -33,6 +33,5 @@ function Rooms() {
     </div>
   );
 }
-console.log();
 
 export default Rooms;

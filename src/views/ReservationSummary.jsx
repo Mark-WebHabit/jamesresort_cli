@@ -118,7 +118,7 @@ function ReservationSummary() {
       amenitiesFee: amenities,
       guestFee: guestFee,
       totalFee: totalFee,
-      status: "pending",
+      status: "confirmed",
       client: name,
       clientAddress: address,
       clientContact: contact,
