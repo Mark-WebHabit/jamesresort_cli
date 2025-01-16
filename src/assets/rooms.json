@@ -1,0 +1,243 @@
+[
+  {
+    "name": "A-room 1",
+    "images": [0],
+    "pax": 8,
+    "price": 2500,
+    "inclutions": [
+      "Own bathroom",
+      "Two-story house",
+      "3 beds",
+      "Air conditioned"
+    ],
+    "category": "A-rooms",
+    "status": "available"
+  },
+  {
+    "name": "A-room 2",
+    "images": [0],
+    "pax": 8,
+    "price": 2500,
+    "inclutions": [
+      "Own bathroom",
+      "Two-story house",
+      "3 beds",
+      "Air conditioned"
+    ],
+    "category": "A-rooms",
+    "status": "available"
+  },
+  {
+    "name": "Villa 1",
+    "images": [0],
+    "pax": 15,
+    "price": 6000,
+    "inclutions": [
+      "Own bathroom",
+      "Own kitchen and pool",
+      "3 beds",
+      "1 bunk bed",
+      "Air conditioned"
+    ],
+    "category": "Villas",
+    "status": "available"
+  },
+  {
+    "name": "Villa 2",
+    "images": [0],
+    "pax": 15,
+    "price": 6000,
+    "inclutions": [
+      "Own bathroom",
+      "Own kitchen and pool",
+      "3 beds",
+      "1 bunk bed",
+      "Air conditioned"
+    ],
+    "category": "Villas",
+    "status": "available"
+  },
+  {
+    "name": "Family Room 1",
+    "images": [0],
+    "pax": 7,
+    "price": 2500,
+    "inclutions": ["Own bathroom", "1 twin size bed", "1 bunk bed"],
+    "category": "Family Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Family Room 2",
+    "images": [0],
+    "pax": 7,
+    "price": 2500,
+    "inclutions": ["Own bathroom", "1 twin size bed", "1 bunk bed"],
+    "category": "Family Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Couple Room 1",
+    "images": [0],
+    "pax": 2,
+    "price": 1500,
+    "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
+    "category": "Couple Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Couple Room 2",
+    "images": [0],
+    "pax": 2,
+    "price": 1500,
+    "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
+    "category": "Couple Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Couple Room 3",
+    "images": [0],
+    "pax": 2,
+    "price": 1500,
+    "inclutions": ["Own bathroom", "1 twin size bed", "Air conditioned"],
+    "category": "Couple Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Standard Room 1",
+    "images": [0],
+    "pax": 4,
+    "price": 1700,
+    "inclutions": ["Own bathroom", "1 bunk bed", "Air conditioned"],
+    "category": "Standard Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Standard Room 2",
+    "images": [0],
+    "pax": 4,
+    "price": 1700,
+    "inclutions": ["Own bathroom", "1 bunk bed", "Air conditioned"],
+    "category": "Standard Rooms",
+    "status": "available"
+  },
+  {
+    "name": "Big Cottage 1",
+    "images": [0],
+    "pax": 15,
+    "price": 1000,
+    "category": "Big Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Big Cottage 2",
+    "images": [0],
+    "pax": 15,
+    "price": 1000,
+    "category": "Big Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Big Cottage 3",
+    "images": [0],
+    "pax": 15,
+    "price": 1000,
+    "category": "Big Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Big Cottage 4",
+    "images": [0],
+    "pax": 15,
+    "price": 1000,
+    "category": "Big Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Big Cottage 5",
+    "images": [0],
+    "pax": 15,
+    "price": 1000,
+    "category": "Big Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Medium Cottage 1",
+    "images": [0],
+    "pax": 8,
+    "price": 700,
+    "category": "Medium Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Medium Cottage 2",
+    "images": [0],
+    "pax": 8,
+    "price": 700,
+    "category": "Medium Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Nipa Hut 1",
+    "images": [0],
+    "pax": 6,
+    "price": 500,
+    "category": "Nipa Huts",
+    "status": "available"
+  },
+  {
+    "name": "Nipa Hut 2",
+    "images": [0],
+    "pax": 6,
+    "price": 500,
+    "category": "Nipa Huts",
+    "status": "available"
+  },
+  {
+    "name": "Nipa Hut 3",
+    "images": [0],
+    "pax": 6,
+    "price": 500,
+    "category": "Nipa Huts",
+    "status": "available"
+  },
+  {
+    "name": "Nipa Hut 4",
+    "images": [0],
+    "pax": 6,
+    "price": 500,
+    "category": "Nipa Huts",
+    "status": "available"
+  },
+  {
+    "name": "Nipa Hut 5",
+    "images": [0],
+    "pax": 6,
+    "price": 500,
+    "category": "Nipa Huts",
+    "status": "available"
+  },
+  {
+    "name": "Steel Cottage 1",
+    "images": [0],
+    "pax": 4,
+    "price": 350,
+    "category": "Steel Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Steel Cottage 2",
+    "images": [0],
+    "pax": 4,
+    "price": 350,
+    "category": "Steel Cottages",
+    "status": "available"
+  },
+  {
+    "name": "Steel Cottage 3",
+    "images": [0],
+    "pax": 4,
+    "price": 350,
+    "category": "Steel Cottages",
+    "status": "available"
+  }
+]

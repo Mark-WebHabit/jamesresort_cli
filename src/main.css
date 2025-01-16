@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.booked-date {
+  background-color: #ffcccc;
+  color: #ff0000;
+  pointer-events: none; /* Optional: Prevent clicking on booked dates */
+}
