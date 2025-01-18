@@ -95,8 +95,16 @@ function GetGuestInfo({
                 />
               </div>
             </div>
-            <div className="flex-1 items-center justify-center">
-              <img src="/images/resort_logo.png" alt="logo" />
+            <div className="flex-1 items-center justify-center ">
+              <div className="flex items-center gap-2">
+                <img src="/images/gcash.png" className="w-[40px]" alt="" />
+                <p className="text-xl font-bold">09469291684</p>
+              </div>
+              <img
+                src="/images/resort_logo.png"
+                className="w-4/5 block mx-auto"
+                alt="logo"
+              />
               <div className="flex">
                 <button
                   className="px-10 py-4 rounded-xl bg-red-700 font-bold text-white block mx-auto"
