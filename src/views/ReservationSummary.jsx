@@ -48,6 +48,17 @@ function ReservationSummary() {
   const [reservationId, setReservationId] = useState("");
 
   useEffect(() => {
+    if (!room) return;
+
+    if (parseInt(numberOfGuests) === room.pax) {
+      setAddAmenities((old) => ({
+        ...old,
+        bed: room?.limit,
+      }));
+    }
+  }, [numberOfGuests, room]);
+
+  useEffect(() => {
     let sum = amenitiesFee + guestFee + room?.price;
     setTotalFee(sum);
   }, [guestFee, amenitiesFee, room, dayTour]);
@@ -201,6 +212,7 @@ function ReservationSummary() {
                   <ToggleGuestNumber
                     numberOfGuests={numberOfGuests}
                     setNumberOfGuests={setNumberOfGuests}
+                    pax={room?.pax}
                   />
 
                   <p>Php {guestFee}</p>
@@ -209,6 +221,7 @@ function ReservationSummary() {
                   addAmenities={addAmenities}
                   setAddAmenities={setAddAmenities}
                   amenitiesFee={amenitiesFee}
+                  limit={room?.limit}
                 />
 
                 <div className="check flex items-center gap-8 ">

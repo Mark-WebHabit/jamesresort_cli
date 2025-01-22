@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
 
-function ToggleGuestNumber({ numberOfGuests, setNumberOfGuests }) {
+function ToggleGuestNumber({ numberOfGuests, setNumberOfGuests, pax }) {
   return (
     <div className="flex items-center gap-4">
       <p
         className="font-bold text-3xl cursor-pointer select-none"
-        onClick={() => setNumberOfGuests((old) => old + 1)}
+        onClick={() =>
+          setNumberOfGuests((old) => {
+            if (old >= pax) return old;
+
+            return old + 1;
+          })
+        }
       >
         +
       </p>
@@ -15,6 +21,7 @@ function ToggleGuestNumber({ numberOfGuests, setNumberOfGuests }) {
         onClick={() => {
           setNumberOfGuests((old) => {
             if (old <= 1) return old;
+
             return old - 1;
           });
         }}
@@ -28,6 +35,7 @@ function ToggleGuestNumber({ numberOfGuests, setNumberOfGuests }) {
 ToggleGuestNumber.propTypes = {
   numberOfGuests: PropTypes.number,
   setNumberOfGuests: PropTypes.func,
+  pax: PropTypes.number,
 };
 
 export default ToggleGuestNumber;

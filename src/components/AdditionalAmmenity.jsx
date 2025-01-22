@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
 
-function AdditionalAmmenity({ addAmenities, setAddAmenities, amenitiesFee }) {
+function AdditionalAmmenity({
+  addAmenities,
+  setAddAmenities,
+  amenitiesFee,
+  limit,
+}) {
   return (
     <>
       <div className="flex items-center justify-between">
@@ -14,12 +19,12 @@ function AdditionalAmmenity({ addAmenities, setAddAmenities, amenitiesFee }) {
         <div className="flex items-center gap-4">
           <p
             className="font-bold text-3xl cursor-pointer select-none"
-            onClick={() =>
-              setAddAmenities((old) => ({
+            onClick={() => {
+              return setAddAmenities((old) => ({
                 ...old,
-                bed: old.bed + 1,
-              }))
-            }
+                bed: old.bed + 1 > limit ? limit : old.bed + 1,
+              }));
+            }}
           >
             +
           </p>
@@ -108,6 +113,7 @@ AdditionalAmmenity.propTypes = {
   }),
   setAddAmenities: PropTypes.func,
   amenitiesFee: PropTypes.number,
+  limit: PropTypes.number,
 };
 
 export default AdditionalAmmenity;
